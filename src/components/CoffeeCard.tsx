@@ -89,6 +89,7 @@ export default function CoffeeCard({
         >
           <BGIcon BGColor={COLORS.primaryOrangeHex}>
             <FontAwesome
+              name="plus"
               color={COLORS.primaryWhiteHex}
               size={FONTSIZE.size_10}
             />
