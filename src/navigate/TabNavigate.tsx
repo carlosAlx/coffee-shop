@@ -5,7 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import Cartscreen from "../screens/Cartscreen";
 import FavoritesScrenn from "../screens/FavoritesScrenn";
 import OrderHistiyScreen from "../screens/OrderHistiyScreen";
-import { Ionicons, Feather } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { COLORS } from "../themes/theme";
 import { BlurView } from "@react-native-community/blur";
 
@@ -15,15 +15,15 @@ export default function TabNavigate() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarStyle: styles.tabBar,
+        headerShown: false,
         tabBarShowLabel: false,
+        tabBarStyle: styles.tabBar,
         tabBarBackground: () => (
           <BlurView
-            blurAmount={15}
+            blurAmount={1}
             overlayColor=""
-            style={styles.BlurViewStyles}
+            style={styles.blurViewStyles}
           />
         ),
       }}
@@ -33,7 +33,7 @@ export default function TabNavigate() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
-            <Feather
+            <FontAwesome
               name="home"
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
@@ -48,12 +48,12 @@ export default function TabNavigate() {
         component={Cartscreen}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
-            <Feather
-              name="shopping-cart"
+            <FontAwesome
+              name="cart-plus"
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
               }
-              size={size}
+              size={30}
             />
           ),
         }}
@@ -63,7 +63,7 @@ export default function TabNavigate() {
         component={FavoritesScrenn}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
-            <Feather
+            <FontAwesome
               name="star"
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
@@ -78,8 +78,8 @@ export default function TabNavigate() {
         component={OrderHistiyScreen}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
-            <Feather
-              name="inbox"
+            <FontAwesome
+              name="history"
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
               }
@@ -94,20 +94,18 @@ export default function TabNavigate() {
 
 const styles = StyleSheet.create({
   tabBar: {
+    height: 80,
     position: "absolute",
     backgroundColor: COLORS.primaryBlackRGBA,
     borderTopWidth: 0,
     elevation: 0,
     borderTopColor: "transparent",
   },
-  BlurViewStyles: {
+  blurViewStyles: {
     position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
-  },
-  labBarStyle: {
-    color: COLORS.primaryLightGreyHex,
   },
 });

@@ -1,4 +1,5 @@
 export interface ProductType {
+  length: number;
   id: string;
   name: string;
   description: string;
