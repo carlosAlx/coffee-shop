@@ -1,11 +1,13 @@
+import { ImageProps } from "react-native";
+
 export interface ProductType {
   length: number;
   id: string;
   name: string;
   description: string;
   roasted: string;
-  imagelink_square: React.ReactNode;
-  imagelink_portrait: React.ReactNode;
+  imagelink_square: ImageProps;
+  imagelink_portrait: ImageProps;
   ingredients: string;
   special_ingredient: string;
   prices: prices[];

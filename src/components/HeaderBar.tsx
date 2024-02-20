@@ -13,7 +13,7 @@ export default function HeaderBar({ title }: Props) {
     <View style={styles.headerContainer}>
       <GradientBGIcon>
         <FontAwesome
-          name={"user"}
+          name="bars"
           color={COLORS.primaryLightGreyHex}
           size={FONTSIZE.size_16}
         />
