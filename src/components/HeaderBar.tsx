@@ -1,14 +1,23 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from "../themes/theme";
+import GradientBGIcon from "./GradientBGIcon";
+import { FontAwesome } from "@expo/vector-icons";
 
-interface Props {
+type Props = {
   title?: string;
-}
+};
 
 export default function HeaderBar({ title }: Props) {
   return (
     <View style={styles.headerContainer}>
+      <GradientBGIcon>
+        <FontAwesome
+          name={"user"}
+          color={COLORS.primaryLightGreyHex}
+          size={FONTSIZE.size_16}
+        />
+      </GradientBGIcon>
       <Text style={styles.headerText}>{title}</Text>
     </View>
   );
